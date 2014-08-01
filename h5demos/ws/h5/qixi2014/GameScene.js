@@ -32,11 +32,11 @@
             linesContainer.addChild(line);
         }
 
-        var lastTime = new Date().getMilliseconds();
+        var lastTime = new Date().getTime();
 
         function _this_clickHandler(e) {
-            var currentTime = new Date().getMilliseconds();
-            if(currentTime-lastTime<30){
+            var currentTime = new Date().getTime();
+            if(currentTime-lastTime<50){
                 return;
             }else{
                 lastTime = currentTime;
