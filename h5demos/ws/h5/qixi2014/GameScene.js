@@ -36,7 +36,7 @@
 
         function _this_clickHandler(e) {
             var currentTime = new Date().getTime();
-            if(currentTime-lastTime<50){
+            if(currentTime-lastTime<100){
                 return;
             }else{
                 lastTime = currentTime;
