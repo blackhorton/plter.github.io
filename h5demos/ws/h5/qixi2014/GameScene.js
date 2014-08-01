@@ -33,6 +33,9 @@
         }
 
         function _this_clickHandler(e) {
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
             if(Math.floor((gameView.height- e.stageY)/cardWidth)==1){
                 for(var i =0;i<linesContainer.children.length;i++){
                     var child = linesContainer.getChildAt(i);
