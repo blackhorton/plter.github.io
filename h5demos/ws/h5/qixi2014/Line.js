@@ -24,7 +24,8 @@
         };
 
         _this.moveDown = function(){
-            createjs.Tween.get(_this).to({"y":_this.y+rectWidth},100).call(_this.checkToRemove);
+//            createjs.Tween.get(_this).to({"y":_this.y+rectWidth},100).call(_this.checkToRemove);
+            _this.y+=rectWidth;
             _this.checkToRemove();
         }
 
