@@ -31,7 +31,7 @@
         function startGameBtn_clickHandler(e) {
             startGameBtn.removeEventListener("click",startGameBtn_clickHandler);
 
-            replaceScene(GameScene(gameView,_this.getStage()));
+            replaceScene(GameScene(gameView));
         }
 
         function addStartGameBtn() {

@@ -3,15 +3,15 @@
  */
 
 (function () {
-    function GameScene(gameView,stage) {
+    function GameScene(gameView) {
         var _this = new createjs.Container();
         var linesContainer = new createjs.Container();
-        _this.addChild(linesContainer);
         window.GAME_CONFIG_H_NUM = 4;
         var cardWidth = gameView.width/GAME_CONFIG_H_NUM;
         var timerCount = 50;
         var timerLabel = new createjs.Text(timerCount+"秒","bold 30px Arial","#ff0000");
         var sendCount = 0;
+        var bg = new createjs.Shape();
 
         function addTimerLabel() {
             _this.addChild(timerLabel);
@@ -32,7 +32,7 @@
             linesContainer.addChild(line);
         }
 
-        function stage_mouseDownHandler(e) {
+        function _this_clickHandler(e) {
             if(Math.floor((gameView.height- e.stageY)/cardWidth)==1){
                 for(var i =0;i<linesContainer.children.length;i++){
                     var child = linesContainer.getChildAt(i);
@@ -71,15 +71,22 @@
         function gameOver() {
             clearInterval(timerId);
             linesContainer.removeAllChildren();
-            stage.removeEventListener("stagemouseup",stage_mouseDownHandler);
 
+            _this.removeEventListener("click", _this_clickHandler);
             replaceScene(GameOverScene(gameView,sendCount));
         }
 
+        function addBg() {
+            bg.graphics.beginFill("#eeeeee").drawRect(0,0,gameView.width,gameView.height).endFill();
+            _this.addChild(bg);
+            _this.addEventListener("click", _this_clickHandler);
+        }
+
+        addBg();
+
+        _this.addChild(linesContainer);
         addLines();
         addTimerLabel();
-
-        stage.addEventListener("stagemouseup",stage_mouseDownHandler);
 
         //startGame
         var timerId = setInterval(intervalHandler,1000);
