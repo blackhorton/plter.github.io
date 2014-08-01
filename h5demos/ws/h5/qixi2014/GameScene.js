@@ -32,9 +32,15 @@
             linesContainer.addChild(line);
         }
 
+        var lastTime = new Date().getMilliseconds();
+
         function _this_clickHandler(e) {
-            e.stopPropagation();
-            e.stopImmediatePropagation();
+            var currentTime = new Date().getMilliseconds();
+            if(currentTime-lastTime<100){
+                return;
+            }else{
+                currentTime = lastTime;
+            }
 
             if(Math.floor((gameView.height- e.stageY)/cardWidth)==1){
                 for(var i =0;i<linesContainer.children.length;i++){
