@@ -27,7 +27,7 @@
         }
 
         function addLine(index) {
-            var line = Line(gameView.width,gameView.height);
+            var line = Line(gameView);
             line.y = gameView.height - cardWidth * index;
             linesContainer.addChild(line);
         }

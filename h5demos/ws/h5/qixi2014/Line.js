@@ -2,10 +2,10 @@
  * Created by plter on 8/1/14.
  */
 (function () {
-    function Line(screenWidth,screenHeight) {
+    function Line(gameView) {
         var _this = new createjs.Container();
 
-        var rectWidth = screenWidth/GAME_CONFIG_H_NUM;
+        var rectWidth = gameView.width/GAME_CONFIG_H_NUM;
         var ql = new lib.QLMc();
         var ratio = rectWidth/ql.getBounds().width;
         ql.scaleX = ratio;
@@ -16,20 +16,29 @@
 
 
         _this.checkToRemove = function () {
-            if(_this.y>=screenHeight){
+            if(_this.y>=gameView.height){
                 if(_this.parent){
                     _this.parent.removeChild(_this);
+                    _this.removeEventListener("tick",tickHandler);
+
+                    console.log(">>>");
                 }
             }
         };
 
         _this.moveDown = function(){
-            createjs.Tween.get(_this).to({"y":_this.y+rectWidth},300).call(_this.checkToRemove);
+            createjs.Tween.get(_this).to({"y":_this.y+rectWidth},100);
         };
 
         _this.getQlIndex = function () {
             return qlIndex;
         };
+
+        function tickHandler(e) {
+            _this.checkToRemove();
+        }
+
+        _this.addEventListener("tick",tickHandler);
 
         return _this;
     }
