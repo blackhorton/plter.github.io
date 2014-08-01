@@ -36,10 +36,10 @@
 
         function _this_clickHandler(e) {
             var currentTime = new Date().getMilliseconds();
-            if(currentTime-lastTime<100){
+            if(currentTime-lastTime<30){
                 return;
             }else{
-                currentTime = lastTime;
+                lastTime = currentTime;
             }
 
             if(Math.floor((gameView.height- e.stageY)/cardWidth)==1){
