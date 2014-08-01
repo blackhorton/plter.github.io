@@ -19,26 +19,17 @@
             if(_this.y>=gameView.height){
                 if(_this.parent){
                     _this.parent.removeChild(_this);
-                    _this.removeEventListener("tick",tickHandler);
-
-                    console.log(">>>");
                 }
             }
         };
 
         _this.moveDown = function(){
-            createjs.Tween.get(_this).to({"y":_this.y+rectWidth},100);
+            createjs.Tween.get(_this).to({"y":_this.y+rectWidth},100).call(_this.checkToRemove);
         };
 
         _this.getQlIndex = function () {
             return qlIndex;
         };
-
-        function tickHandler(e) {
-            _this.checkToRemove();
-        }
-
-        _this.addEventListener("tick",tickHandler);
 
         return _this;
     }
