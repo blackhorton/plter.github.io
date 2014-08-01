@@ -71,7 +71,7 @@
         function gameOver() {
             clearInterval(timerId);
             linesContainer.removeAllChildren();
-            stage.removeEventListener("stagemousedown",stage_mouseDownHandler);
+            stage.removeEventListener("stagemouseup",stage_mouseDownHandler);
 
             replaceScene(GameOverScene(gameView,sendCount));
         }
@@ -79,7 +79,7 @@
         addLines();
         addTimerLabel();
 
-        stage.addEventListener("stagemousedown",stage_mouseDownHandler);
+        stage.addEventListener("stagemouseup",stage_mouseDownHandler);
 
         //startGame
         var timerId = setInterval(intervalHandler,1000);
