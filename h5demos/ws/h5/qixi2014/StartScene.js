@@ -49,14 +49,14 @@
             var index = location.href.indexOf("?");
             if(index>-1){
                 try {
-                    textContent = decodeURI(location.href.substr(index + 1));
+                    textContent = location.href.substr(index + 1);
                     var textContentArr = textContent.split("&");
                     var kvs = {};
                     for(var i=0;i<textContentArr.length;i++){
                         var kv = textContentArr[i].split("=");
                         kvs[kv[0]]=kv[1];
                     }
-                    textContent = kvs["words"];
+                    textContent = decodeURI(kvs["words"]);
                 }catch (err){}
             }
 
