@@ -98,11 +98,11 @@ p.nominalBounds = new cjs.Rectangle(0,0,48,48);
 	this.initialize();
 
 	// label
-	this.label = new cjs.Text("点击这里自定义该游戏", "20px 'Arial'");
+	this.label = new cjs.Text("点击这里送上你的祝福", "20px 'Arial'");
 	this.label.name = "label";
 	this.label.lineHeight = 22;
-	this.label.lineWidth = 202;
-	this.label.setTransform(12,8);
+	this.label.lineWidth = 205;
+	this.label.setTransform(9,8);
 
 	// bg
 	this.shape = new cjs.Shape();
@@ -146,11 +146,11 @@ p.nominalBounds = new cjs.Rectangle(-1.5,-1.5,113,41);
 	this.initialize();
 
 	// label
-	this.label = new cjs.Text("开始游戏", "20px 'Arial'");
+	this.label = new cjs.Text("开始送花", "22px 'Wawati TC'");
 	this.label.name = "label";
-	this.label.lineHeight = 22;
-	this.label.lineWidth = 83;
-	this.label.setTransform(12,8);
+	this.label.lineHeight = 24;
+	this.label.lineWidth = 95;
+	this.label.setTransform(9,3);
 
 	// bg
 	this.shape = new cjs.Shape();

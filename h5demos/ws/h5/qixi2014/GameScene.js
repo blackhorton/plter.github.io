@@ -12,6 +12,7 @@
         var timerLabel = new createjs.Text(timerCount+"秒","bold 30px Arial","#ff0000");
         var sendCount = 0;
         var bg = new createjs.Shape();
+        var gameRoleLabel=new createjs.Text("游戏规则：\n1.从下往上点击情侣开始送花\n2.不能点击空白处","bold 20px Arial","#ff00ff");
 
         function addTimerLabel() {
             _this.addChild(timerLabel);
@@ -86,6 +87,7 @@
 
         _this.addChild(linesContainer);
         addLines();
+        _this.addChild(gameRoleLabel);
         addTimerLabel();
 
         //startGame

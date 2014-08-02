@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="btn2" itemID="53dbb22e-00000087" linkageExportForAS="true" linkageClassName="RestartGameBtn" lastModified="1406910938">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="btn2" itemID="53dbb22e-00000087" linkageExportForAS="true" linkageClassName="RestartGameBtn" lastModified="1406953225">
   <persistentData>
     <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;true"/>
   </persistentData>
