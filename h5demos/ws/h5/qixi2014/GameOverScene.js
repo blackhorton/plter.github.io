@@ -43,11 +43,11 @@
         function addContentLabel() {
             _this.addChild(contentLabel);
 
-            if(sendCount<40){
+            if(sendCount<30){
                 contentLabel.text = "才送出"+sendCount+"个祝福，难怪现在你还单身";
-            }else if(sendCount<70){
+            }else if(sendCount<50){
                 contentLabel.text = "送出"+sendCount+"个祝福，一般一般吧，隔壁姐们随便动动手都比你送得多";
-            }else if(sendCount<100){
+            }else if(sendCount<70){
                 contentLabel.text = "送出"+sendCount+"个祝福，很不错哦，再接再厉哇";
             }else{
                 contentLabel.text = "送出"+sendCount+"个祝福，你太厉害了，一定是情圣";
