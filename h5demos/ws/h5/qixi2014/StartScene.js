@@ -56,11 +56,16 @@
                         var kv = textContentArr[i].split("=");
                         kvs[kv[0]]=kv[1];
                     }
-                    textContent = decodeURI(kvs["words"]);
+                    var words = kvs["words"];
+                    if(words) {
+                        textContent = decodeURI(kvs["words"]);
+                    }else{
+                        textContent = null;
+                    }
                 }catch (err){}
             }
 
-            if(textContent==null||textContent==""){
+            if(!textContent||textContent==""){
                 textContent = "以此游戏献给我深爱的秋儿，祝秋儿天天开心！这9朵玫瑰代表我永久爱你"
             }
 
