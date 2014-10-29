@@ -74,6 +74,7 @@ function startGame(){
 
 function setText(words){
     txt.text = words;
+    document.title = words;
 
     var bounds = txt.getBounds();
     txt.x = (stage.canvas.width-bounds.width)/2;
