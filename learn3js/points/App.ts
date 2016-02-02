@@ -62,5 +62,4 @@ namespace plter {
     }
 }
 
-
 new plter.App();
