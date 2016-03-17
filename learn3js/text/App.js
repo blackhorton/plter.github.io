@@ -62,7 +62,7 @@ function addText(font) {
     textMeshParent.add(textMesh);
 
     var box = new THREE.Box3().setFromObject(textMesh);
-    var halfWidth = (box.max.x - box.min.x) / 2
+    var halfWidth = (box.max.x - box.min.x) / 2;
     textMesh.position.x = -halfWidth;
 }
 
