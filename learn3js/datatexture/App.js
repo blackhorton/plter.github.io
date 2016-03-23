@@ -36,6 +36,7 @@ function App() {
 
     this.addImageData = function () {
         this._geom = new THREE.PlaneGeometry(1, 1);
+        this._geom.scale();
         this._mater = new THREE.MeshBasicMaterial({
             map: this.createTexture(),
             side: THREE.DoubleSide
