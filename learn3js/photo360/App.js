@@ -3,7 +3,7 @@
  */
 (function () {
 
-    var Constants = {WIDTH: 550, HEIGHT: 400};
+    var Constants = {WIDTH: 550, HEIGHT: 400, R: 50};
 
     function App() {
 
@@ -18,7 +18,7 @@
         };
 
         this.addSkyBall = function () {
-            var geometry = new THREE.SphereGeometry(100, 20, 20);
+            var geometry = new THREE.SphereGeometry(Constants.R, 20, 20);
             var material = new THREE.MeshBasicMaterial({
                 map: new THREE.TextureLoader().load("photo.jpg"),
                 side: THREE.BackSide
@@ -32,7 +32,7 @@
             this._scene = new THREE.Scene();
 
             this._camera = new THREE.PerspectiveCamera(25, Constants.WIDTH / Constants.HEIGHT, 0.01, 1000);
-            this._camera.position.z = 160;
+            this._camera.position.z = Constants.R * 3 / 2;
             this._scene.add(this._camera);
 
             this._renderer = new THREE.WebGLRenderer();
