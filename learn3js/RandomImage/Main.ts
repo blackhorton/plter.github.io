@@ -15,11 +15,20 @@ namespace plter {
 
         private fillRandom() {
             let imgData:ImageData = this.context.createImageData(400, 300);
+            var colorValue;
+
+            //for (let i = 0; i < imgData.data.length; i += 4) {
+            //    imgData.data[i] = 255 * Math.random();
+            //    imgData.data[i + 1] = 255 * Math.random();
+            //    imgData.data[i + 2] = 255 * Math.random();
+            //    imgData.data[i + 3] = 255;
+            //}
 
             for (let i = 0; i < imgData.data.length; i += 4) {
-                imgData.data[i] = 255 * Math.random();
-                imgData.data[i + 1] = 255 * Math.random();
-                imgData.data[i + 2] = 255 * Math.random();
+                colorValue = Math.floor(256 * Math.random());
+                imgData.data[i] = colorValue;
+                imgData.data[i + 1] = colorValue;
+                imgData.data[i + 2] = colorValue;
                 imgData.data[i + 3] = 255;
             }
 
