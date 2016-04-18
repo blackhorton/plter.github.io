@@ -13,6 +13,10 @@ namespace plter {
             this.fillRandom();
         }
 
+
+
+
+
         private fillRandom() {
             let imgData:ImageData = this.context.createImageData(400, 300);
             var colorValue;
