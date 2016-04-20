@@ -5,16 +5,16 @@
 (function () {
     function App() {
         return {
-            context: null, imgData: null,
+            context: null, imgData: null, canvasWidth: 1000, canvasHeight: 600,
 
             appInit: function () {
                 var canvas = document.createElement("canvas");
-                canvas.width = 400;
-                canvas.height = 300;
+                canvas.width = this.canvasWidth;
+                canvas.height = this.canvasHeight;
                 document.body.appendChild(canvas);
                 this.context = canvas.getContext("2d");
 
-                this.imgData = this.context.createImageData(400, 300);
+                this.imgData = this.context.createImageData(this.canvasWidth, this.canvasHeight);
 
                 this.render();
             },
