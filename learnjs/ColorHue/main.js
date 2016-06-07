@@ -51,7 +51,7 @@ var Main = (function () {
         g = Math.round(g);
         b = Math.round(b);
         var color = "#" + this.formatToRadix16(r) + this.formatToRadix16(g) + this.formatToRadix16(b);
-        console.log(color, Math.round(h));
+        this.msgContainer.innerHTML = "颜色:<span style='width: 100px;display: inline-block;'>" + color + "</span>" + "色相:" + Math.round(h);
         return color;
     };
     Main.prototype.render = function () {
