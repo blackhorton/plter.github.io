@@ -1,3 +1,4 @@
+///<reference path="ColorTool.ts"/>
 /**
  * Created by plter on 6/7/16.
  */
@@ -15,51 +16,14 @@ var Main = (function () {
         this.context2d = this.canvas.getContext('2d');
         this.render();
     }
-    Main.prototype.formatToRadix16 = function (num) {
-        return num < 16 ? "0" + num.toString(16) : num.toString(16);
-    };
-    Main.prototype.makeColorByH = function (h) {
-        h %= 360;
-        var r = 0;
-        var g = 0;
-        var b = 0;
-        if (h <= 60) {
-            r = 255;
-            g = 255 * h / 60;
-        }
-        else if (h <= 120) {
-            r = 255 * (120 - h) / 60;
-            g = 255;
-        }
-        else if (h <= 180) {
-            g = 255;
-            b = 255 * (h - 120) / 60;
-        }
-        else if (h <= 240) {
-            g = 255 * (240 - h) / 60;
-            b = 255;
-        }
-        else if (h <= 300) {
-            b = 255;
-            r = 255 * (h - 240) / 60;
-        }
-        else {
-            b = 255 * (360 - h) / 60;
-            r = 255;
-        }
-        r = Math.round(r);
-        g = Math.round(g);
-        b = Math.round(b);
-        var color = "#" + this.formatToRadix16(r) + this.formatToRadix16(g) + this.formatToRadix16(b);
-        this.msgContainer.innerHTML = "颜色:<span style='width: 100px;display: inline-block;'>" + color + "</span>" + "色相:" + Math.round(h);
-        return color;
-    };
     Main.prototype.render = function () {
+        var color = ColorTool.makeColorByH(this.colorH);
         this.context2d.save();
-        this.context2d.fillStyle = this.makeColorByH(this.colorH);
+        this.context2d.fillStyle = color;
         this.context2d.fillRect(0, 0, this.WIDTH, this.HEIGHT);
         this.context2d.restore();
         this.colorH += 0.6;
+        this.msgContainer.innerHTML = "颜色:<span style='width: 100px;display: inline-block;'>" + color + "</span>" + "色相:" + Math.round(this.colorH % 360);
         requestAnimationFrame(this.render.bind(this));
     };
     return Main;
