@@ -14,7 +14,7 @@ plter.App = function () {
             this._context = document.getElementById("canvas").getContext("2d");
 
             this._randomMap = plter.RandomMap().RandomMapInit();
-            this._randomMap.draw(this._context);
+            this._randomMap.render(this._context);
 
             return this;
         }
@@ -22,7 +22,7 @@ plter.App = function () {
         , btnResetMapClicked: function () {
             this._context.clearRect(0, 0, this._context.canvas.width, this._context.canvas.height);
             this._randomMap.resetMap();
-            this._randomMap.draw(this._context);
+            this._randomMap.render(this._context);
         }
 
         , btnFindWayClicked: function () {

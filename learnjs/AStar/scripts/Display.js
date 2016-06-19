@@ -22,7 +22,7 @@ plter.Display = function () {
          *
          * @param context {CanvasRenderingContext2D}
          */
-        draw: function (context) {
+        render: function (context) {
             context.save();
             context.translate(this.x, this.y);
             this.onDrawContent(context);

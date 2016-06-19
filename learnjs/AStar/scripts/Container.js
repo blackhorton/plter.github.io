@@ -23,7 +23,7 @@ plter.Container = function () {
         onDrawContent: function (context) {
             var length = this._children.length;
             for (var i = 0; i < length; i++) {
-                this._children[i].draw(context);
+                this._children[i].render(context);
             }
         }
     };
