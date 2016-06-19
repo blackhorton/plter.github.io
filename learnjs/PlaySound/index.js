@@ -4,7 +4,7 @@
 
 (function () {
 
-    var audio = document.getElementById("audio");
+    var audio = document.getElementById("_audio");
 
     setInterval(function () {
         console.log(audio.currentTime, audio);
