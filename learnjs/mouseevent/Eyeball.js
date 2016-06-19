@@ -47,7 +47,6 @@
             ry = -1;
         }
 
-
         this._eb.style.left = (this._ORIGIN_LEFT + Math.cos(angle) * this._R * rx) + "px";
         this._eb.style.top = (this._ORIGIN_LEFT + Math.sin(angle) * this._R * ry) + "px";
     }
