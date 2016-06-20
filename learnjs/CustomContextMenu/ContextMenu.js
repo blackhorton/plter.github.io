@@ -13,6 +13,12 @@
     }
 
     ContextMenu.prototype.showMenu = function (x, y) {
+        if (ContextMenu._currentMenu) {
+            ContextMenu._currentMenu.getNode().style.display = "none";
+        }
+
+        ContextMenu._currentMenu = this;
+
         this._node.style.position = "fixed";
         this._node.style.left = x + "px";
         this._node.style.top = y + "px";
