@@ -20,8 +20,8 @@
 
             getDomHtmlString: function () {
                 return "<div class='card_container'>" +
-                    "<div class='card_a card card_page'><img src='" + Constants.IMAGE_BASE_URL + this.imgAUrl + "'></div>" +
-                    "<div class='card_b card card_page'><img src='" + Constants.IMAGE_BASE_URL + this.imgBUrl + "'></div>" +
+                    "<div class='card_a card card_page'><_img src='" + Constants.IMAGE_BASE_URL + this.imgAUrl + "'></div>" +
+                    "<div class='card_b card card_page'><_img src='" + Constants.IMAGE_BASE_URL + this.imgBUrl + "'></div>" +
                     "</div>";
             }
         };

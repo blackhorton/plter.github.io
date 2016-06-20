@@ -32,7 +32,7 @@ var plter;
         ImageTool.IMAGE_CANVAS_WIDTH = 2000;
         ImageTool.IMAGE_CANVAS_HEIGHT = 2000;
         return ImageTool;
-    })();
+    }());
     var Point = (function () {
         function Point(colorA, colorR, colorG, colorB, originalPositionX, originalPositionY) {
             this.colorA = 0;
@@ -93,7 +93,7 @@ var plter;
         Point.timeLine = 0;
         Point.timeStopped = false;
         return Point;
-    })();
+    }());
     var App = (function () {
         function App() {
             this.points = [];
@@ -174,7 +174,7 @@ var plter;
         App.CANVAS_WIDTH = 600;
         App.CANVAS_HEIGHT = 450;
         return App;
-    })();
+    }());
     plter.App = App;
 })(plter || (plter = {}));
 plter.App.getInstance();
