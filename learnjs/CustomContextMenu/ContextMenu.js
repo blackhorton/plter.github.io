@@ -20,9 +20,11 @@
 
         (function (self) {
             document.addEventListener("click", function (event) {
-                self._node.style.display = "none";
+                if (event.button == 0) {
+                    self._node.style.display = "none";
 
-                event.target.removeEventListener("click", arguments.callee);
+                    document.removeEventListener("click", arguments.callee);
+                }
             });
         })(this);
     };

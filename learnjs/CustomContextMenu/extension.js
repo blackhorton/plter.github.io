@@ -26,11 +26,12 @@
                 this._useCustomContextMenu = value;
                 if (this._useCustomContextMenu) {
                     this.oncontextmenu = function (event) {
-                        event.preventDefault();
 
                         if (this.contextMenu) {
                             this.contextMenu.showMenu(event.clientX, event.clientY);
                         }
+
+                        event.preventDefault();
                     }
                 } else {
                     this.oncontextmenu = null;
