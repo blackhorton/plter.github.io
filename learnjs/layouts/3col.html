@@ -7,6 +7,10 @@
 
     <style type="text/css">
 
+        body{
+            min-width: 600px;
+        }
+
         .left-sidebar {
             width: 200px;
             height: 300px;
@@ -18,6 +22,7 @@
             margin-left: 200px;
             margin-right: 200px;
             height: 300px;
+            min-width: 300px;
             background-color: blue;
         }
 
@@ -31,11 +36,14 @@
 </head>
 <body>
 <div>
+    <div>Header</div>
     <div class="left-sidebar"></div>
     <div class="right-sidebar"></div>
     <div class="main">
         Main Main Main
     </div>
+    <!--<div style="clear: both"></div>-->
+    <div>Footer</div>
 </div>
 </body>
 </html>
